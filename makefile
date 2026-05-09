@@ -61,9 +61,9 @@ help:
 $(VENV):
 	python -m venv $(VENV)
 
-$(VENV)/touchfile: $(VENV) requirements.txt
+$(VENV)/touchfile: $(VENV) virtual-env-requirements.txt
 	$(PYTHON) -m pip install --upgrade pip
-	$(PIP) install -r requirements.txt
+	$(PIP) install -r virtual-env-requirements.txt
 	touch $(VENV)/touchfile
 
 env: $(VENV)/touchfile
