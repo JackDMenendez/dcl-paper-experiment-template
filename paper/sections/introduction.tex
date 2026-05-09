@@ -1,0 +1,67 @@
+% introduction.tex
+% EXEMPLAR section showing the patterns used throughout the template:
+%   - top comment header naming the section and (where applicable) the
+%     experiments / derivations it depends on
+%   - \label{sec:...} immediately after the section start in main.tex
+%   - subsection labels of the form \label{subsec:...}
+%   - cross-references via \ref{} / \autoref{}
+%   - figure include via \input{...} of a figure-fragment file
+%   - bibliography citations with \cite{key}
+%   - audit-table reference to Table~\ref{tab:audit}
+%
+% Replace the prose with your own; keep the labelling and cross-reference
+% conventions.
+
+\label{sec:introduction}
+
+\placeholder{One- or two-paragraph orientation: what problem the paper
+addresses, why existing approaches fall short, and what the paper's
+contribution is. The introduction should be readable without the reader
+having internalised any framework-specific notation yet.}
+
+\subsection{Scope}
+\label{subsec:scope}
+
+\placeholder{What is in scope for this paper, and what is explicitly
+deferred to companion papers or follow-on work. Reference the audit
+table (Table~\ref{tab:audit}) if you maintain one --- it is the
+canonical answer to ``has this claim been verified yet?''}
+
+%% The audit table is included here so the reader meets it before any
+%% claim that depends on a status entry.  Move it elsewhere (e.g. into
+%% a "Predictions" section) if that fits the paper better.  Delete this
+%% \input if you are not maintaining an audit table.
+\input{sections/audit_table}
+
+\subsection{A Worked Cross-Reference Example}
+\label{subsec:cross_ref_example}
+
+A statement supported by an external citation looks like this~\cite{example2024}.
+A statement supported by an in-paper derivation looks like this
+(see~\autoref{subsec:scope}).  An equation that is referenced
+elsewhere is given a label:
+%
+\begin{equation}
+    \label{eq:example_identity}
+    e^{i\pi} + 1 = 0.
+\end{equation}
+%
+Equation~\eqref{eq:example_identity} is referenced by label, not by
+hard-coded number.
+
+\subsection{A Worked Figure-Include Example}
+\label{subsec:figure_example}
+
+Figures live in \texttt{paper/figures/} (or in the repo-root
+\texttt{figures/} directory if the figure is shared with experiments).
+The standard pattern is to keep the \verb|\includegraphics| line and the
+caption in a small fragment file under \texttt{paper/figures/}, then
+\verb|\input| that fragment from inside a \verb|figure| environment
+here.  See \texttt{paper/figures/example\_figure.tex} for the template;
+once you replace the placeholder with a real figure, uncomment the
+include block below.
+
+% \begin{figure}[H]
+%     \centering
+%     \input{figures/example_figure}
+% \end{figure}

@@ -1,0 +1,31 @@
+% commands.tex -- mathematical shorthand for this paper
+
+% Theorem environments (numbered within sections)
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+% Definitions and remarks (unnumbered or section-numbered as you prefer)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% TODO marker macro -- visible red [TODO: ...] in draft, suppress for release.
+% Defined with \long so the argument may contain \par / itemize / multi-
+% paragraph prose.  Uses {\color{...} ...} grouping rather than \textcolor
+% because the latter is not \long.
+\makeatletter
+\long\def\todomark#1{{\color{red}[TODO: #1]}}
+\long\def\placeholder#1{\par\noindent\todomark{#1}\par}
+\makeatother
+% To suppress all TODO markers for a release build, uncomment:
+% \long\def\todomark#1{}
+% \long\def\placeholder#1{}
+
+% Add framework-specific shorthand below.  Keep names short, semantic, and
+% consistent across sections.  Examples:
+%   \newcommand{\R}{\mathbb{R}}                          % a math symbol
+%   \newcommand{\op}[1]{\hat{#1}}                        % a wrapper
+%   \newcommand{\eqdef}{\stackrel{\mathrm{def}}{=}}      % a relation

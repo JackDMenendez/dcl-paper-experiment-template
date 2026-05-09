@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+
+# external workspace folders (Windows symlinks to sibling repos)
+.external/
+external/
+.scratchpad/
+
+# Editor / IDE
+.vscode/
+.vs/
+.idea/
+
+# Build outputs
+build/
+stage/
+
+# Experiment side-effects (logs are tracked via the !data/*.log allow rule
+# below; .err captures and one-off scratch files are not).
+data/*.err
+
+# Per-machine Claude Code state
+.claude/settings.json
+.claude/settings.local.json
+
+# LaTeX intermediates (the main PDF lives in build/, promoted to stage/)
+*.aux
+*.bbl
+*.blg
+*.log
+!data/*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.fdb_latexmk_*
+*.synctex.gz
+
+# Python virtual environments (used by the full-stack template; harmless here)
+.venv
+.venv*
+env/
+venv/
+ENV/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# OS junk
+.DS_Store
+Thumbs.db

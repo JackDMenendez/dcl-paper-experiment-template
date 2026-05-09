@@ -1,0 +1,8 @@
+numpy
+matplotlib
+pytest
+
+# Pin specific versions in a separate file (e.g. requirements.lock.txt)
+# once the environment is stable.  Add other dependencies as the project
+# develops -- e.g. scipy, sympy, networkx, pandas, seaborn -- but keep
+# this file minimal so a fresh clone can install quickly.

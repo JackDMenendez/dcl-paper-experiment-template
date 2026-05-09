@@ -1,0 +1,67 @@
+% ============================================================
+% audit_table.tex
+%
+% A "system audit" table mapping the paper's claims to the evidence
+% backing each one.  This is *the* canonical source of truth for which
+% claims are PASS / PART / STUB / FAIL --- prose elsewhere in the paper
+% should not contradict it.
+%
+% Status semantics (paste into the abstract or front-matter as well):
+%   PASS  -- derivation complete or experiment confirms the claim to
+%            stated precision.
+%   PART  -- mechanism demonstrated, full quantitative match pending;
+%            specific gaps documented in the evidence column.
+%   STUB  -- analytical result with no numerical confirmation yet,
+%            or planned experiment not yet run.
+%   FAIL  -- tested and disconfirmed.
+%
+% Use \texttt{} for code/experiment names and file paths inside cells.
+% Long cells are fine -- the column widths are tuned for prose.
+% ============================================================
+
+\label{tab:audit}
+
+{\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.95}
+\begin{longtable}{@{}p{2.6cm}p{3.8cm}p{3.2cm}p{4.4cm}p{1.0cm}@{}}
+\caption{\small System audit: paper claims mapped to supporting
+derivations and experiments.  Status semantics in the front-matter
+(\texttt{PASS} / \texttt{PART} / \texttt{STUB} / \texttt{FAIL}).}
+\label{tab:audit_caption} \\
+\hline
+\textbf{Claim} & \textbf{Mechanism} & \textbf{Continuum / formal limit} & \textbf{Evidence} & \textbf{Status} \\
+\hline
+\endfirsthead
+
+\multicolumn{5}{l}{\textit{(Table~\ref{tab:audit}, continued from previous page)}} \\
+\hline
+\textbf{Claim} & \textbf{Mechanism} & \textbf{Continuum / formal limit} & \textbf{Evidence} & \textbf{Status} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{5}{r}{\textit{(continued on next page)}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+% ── Example row 1 (replace with a real claim) ───────────────────────
+Example claim, fully derived
+    & One-line summary of the mechanism
+    & The standard / continuum statement it reduces to
+    & Derived analytically (\S\ref{subsec:cross_ref_example}, Eq.~\ref{eq:example_identity})
+    & \texttt{PASS} \\
+
+% ── Example row 2 (replace with a real claim) ───────────────────────
+Example claim, partial evidence
+    & One-line summary
+    & The target statement
+    & \texttt{exp\_XX}: describe the gap concretely (e.g.\ ``mechanism
+      reproduced; quantitative match pending higher-resolution run'')
+    & \texttt{PART} \\
+
+\hline
+\end{longtable}
+}

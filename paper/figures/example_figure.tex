@@ -1,0 +1,17 @@
+% example_figure.tex
+% Figure-fragment file. Convention: \includegraphics on line 1, then the
+% caption and label.  Included from a section via:
+%   \begin{figure}[H]
+%       \centering
+%       \input{figures/example_figure}
+%   \end{figure}
+% Putting the caption next to the includegraphics keeps the figure file
+% self-contained -- if you reuse the same plot in a talk, you take this
+% one .tex file with you.
+
+\includegraphics[width=0.7\linewidth]{figures/example_figure.pdf}
+\caption[Short list-of-figures caption]{%
+    Long caption with full prose explanation of axes, units, and what
+    the reader should take away from the figure.  This is the version
+    that appears under the figure in the body.}
+\label{fig:example}
