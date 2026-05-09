@@ -101,8 +101,10 @@ See `release_notes/README.md` for the full procedure. Summary:
 4. **Deposit on Zenodo first** -- the DOI lands in the title-page
    `\thanks{}` block and `CITATION.cff` *before* the release commit.
 5. Commit version bump (DOI included).
-6. Tag `vX.Y`, push the tag.
-7. Create the GitHub Release using the release-message body.
+6. Build final PDF, snapshot to `.stage/<DOC_TITLE>_vX.Y.pdf`
+   (durable per-version archive, gitignored).
+7. Tag `vX.Y`, push the tag.
+8. Create the GitHub Release using the release-message body.
 
 ---
 
