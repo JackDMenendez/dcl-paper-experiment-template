@@ -6,13 +6,16 @@ This file shows the conventions the rest of the suite follows:
 
   - Top docstring states what claim is being tested, names the audit
     row it backs, and points to the companion .md doc.
-  - A single public function (here: run_example_audit) that returns
-    True on PASS and raises on FAIL.  audit_universe.py imports this
-    function by name.
+  - A `RUNTIME_BUDGET_SECONDS` module attribute lets
+    `audit_universe.py --run-quick` decide whether to re-execute this
+    experiment in a CI window.  Omit the attribute (or set to None)
+    for experiments that take longer than the QUICK_BUDGET_SECONDS
+    threshold (default 60 s).
+  - The script prints `<exp_id> PASS` (or PART/FAIL) on its own line
+    near the end.  `audit_universe.py` parses the most recent
+    `data/<exp_id>*.log` for the last such marker.
   - Data outputs go to data/<exp_id>_<descriptor>.{npy,log} so they
     live alongside the experiment.
-  - Print PASS/FAIL/STUB to stdout in a final summary line so a
-    human running it sees the verdict immediately.
 
 Audit row (paper/sections/audit_table.tex):
   "Example claim, partial evidence"
@@ -20,11 +23,15 @@ Companion doc:
   src/experiments/exp_00_example.md
 """
 
-import os
 import sys
 from pathlib import Path
 
 import numpy as np
+
+# Wall-clock estimate read by `audit_universe.py --run-quick`.
+# Set to None (or omit the attribute) for experiments that don't fit
+# in a CI window.
+RUNTIME_BUDGET_SECONDS = 1
 
 # Output directory (data/) lives at repo root, not inside src/.
 REPO_ROOT = Path(__file__).resolve().parents[2]

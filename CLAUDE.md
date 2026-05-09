@@ -77,7 +77,10 @@ authority; this section is for quick orientation only.
   evidence cell names `exp_NN` is operationally defined by
   `src/experiments/exp_NN_<name>.py`. The companion `.md` doc records
   parameters, runtime, and what PASS/PART means for that row. The
-  master roll-up is `python audit_universe.py`; CI should run it.
+  master roll-up is `python audit_universe.py` (treats
+  `audit_table.tex` as authority, parses cached `data/*.log` for
+  PASS/FAIL -- does not re-execute experiments by default; opt-in
+  via `--run-quick` or `--run <exp_id>`); see `audit_universe.md`.
 
 ## Documentation convention for code
 

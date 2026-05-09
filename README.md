@@ -38,7 +38,8 @@ Create a new repository**, then `git clone` the new repo locally.
 +-- notes/                        -- working theoretical notes
 +-- release_notes/                -- per-version change log + Release body
 +-- .claude/agents/claim-auditor.md  -- read-only audit agent
-+-- audit_universe.py             -- master PASS/FAIL/STUB runner
++-- audit_universe.py             -- master PASS/STUB/FAIL audit (parses audit_table.tex + data/*.log)
++-- audit_universe.md             -- companion doc explaining the audit model
 +-- virtual-env-requirements.txt  -- Python dependencies (read by make env and by the wcde repo-setup.sh bootstrap)
 +-- CLAUDE.md                     -- project memory for Claude Code
 +-- CITATION.cff                  -- machine-readable citation

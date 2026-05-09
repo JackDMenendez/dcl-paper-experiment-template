@@ -21,17 +21,31 @@ PASS.
 
 ## How to run
 
+Direct invocation (and capture the log so `audit_universe.py` can
+inspect it later):
+
 ```sh
-python -u src/experiments/exp_00_example.py
+python -u src/experiments/exp_00_example.py 2>&1 \
+    | tee data/exp_00_example.log
 ```
 
-Approximate runtime: <1 s on a laptop.
+Or via the audit-script's run helper, which captures the log
+automatically:
+
+```sh
+python audit_universe.py --run exp_00_example
+```
+
+Approximate runtime: <1 s on a laptop. The script declares
+`RUNTIME_BUDGET_SECONDS = 1`, so it is included in
+`audit_universe.py --run-quick`.
 
 ## Output
 
 | File | Contents |
 |---|---|
 | `data/exp_00_example.npy` | The 10000-sample array |
+| `data/exp_00_example.log` | Captured stdout, parsed by `audit_universe.py` for PASS / FAIL marker |
 
 ## What PASS means
 

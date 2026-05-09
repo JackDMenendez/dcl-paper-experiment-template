@@ -22,3 +22,7 @@ implementer's index.
 
 Status here should equal status in `audit_table.tex`. If they
 disagree, the audit table is the authority and this file is wrong.
+The `audit_universe.py` master roll-up uses `audit_table.tex` as its
+authority and parses each experiment's most recent `data/*.log` for
+the actual cached PASS/FAIL marker -- see `../../audit_universe.md`
+for the full model.
